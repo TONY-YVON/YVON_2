@@ -1,0 +1,12 @@
+# Force HTTPS and canonical domain for Yorvion
+# This fixes iPhone/FortiGuard blocking issues
+
+# Redirect all HTTP to HTTPS
+http://yorvion.com/*      https://yorvion.com/:splat   301!
+http://www.yorvion.com/*  https://yorvion.com/:splat   301!
+
+# Redirect www to non-www (canonical domain)
+https://www.yorvion.com/* https://yorvion.com/:splat   301!
+
+# Netlify subdomain redirect (optional)
+https://comfy-unicorn-c1b3bc.netlify.app/* https://yorvion.com/:splat 301!

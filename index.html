@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 🔒 Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com 'unsafe-inline'; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=(), payment=(), usb=()">
+
+    <title>Yorvion - 24 VDC Industrial Sensors</title>
+
+    <!-- 🔐 Subresource Integrity (SRI) for CDN Resources -->
+    <script src="https://cdn.tailwindcss.com" integrity="sha384-rbsKr5FV5I/FkPjL5hzfH5Oj/Ydxkdz8xvfYZW1K3RcXHJ5hJMzLhH7Xbo1pf2u5" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- 🎨 External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        industrial: {
+                            dark: '#1a1a1a',
+                            gray: '#2d2d2d',
+                            light: '#f5f5f5'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-[#181818] text-gray-900 dark:text-gray-100 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-primary to-indigo-600 text-white py-6 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold">Yorvion</h1>
+                    <p class="text-sm md:text-base opacity-90 mt-1">Industrial Automation Solutions</p>
+                </div>
+                <div class="text-right" aria-hidden="true">
+                    <i class="fas fa-microchip text-4xl md:text-5xl"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Introduction -->
+        <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-3">24 VDC Industrial Sensors</h2>
+            <p class="text-gray-700 dark:text-gray-300">
+                Browse our comprehensive range of 24 VDC industrial sensors designed for reliable performance in demanding environments. Download datasheets and technical specifications for each sensor model.
+            </p>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="mb-6">
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex-1">
+                    <label for="searchInput" class="sr-only">Search sensors by name, model, or type</label>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search sensors..."
+                        aria-label="Search sensors by name, model, or type"
+                        class="w-full px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary"
+                    >
+                </div>
+                <label for="categoryFilter" class="sr-only">Filter by sensor category</label>
+                <select
+                    id="categoryFilter"
+                    aria-label="Filter sensors by category"
+                    class="px-4 py-3 text-base rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary"
+                >
+                    <option value="all">All Categories</option>
+                    <option value="proximity">Proximity Sensors</option>
+                    <option value="photoelectric">Photoelectric Sensors</option>
+                    <option value="pressure">Pressure Sensors</option>
+                    <option value="temperature">Temperature Sensors</option>
+                    <option value="ultrasonic">Ultrasonic Sensors</option>
+                    <option value="flow">Flow Sensors</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Sensors Grid -->
+        <div id="sensorsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" role="region" aria-live="polite">
+            <!-- Sensors will be dynamically loaded here -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 dark:bg-gray-900 mt-12 py-6">
+        <div class="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400">
+            <p>&copy; 2024 Yorvion. All rights reserved.</p>
+            <p class="text-sm mt-2">Industrial Automation & Sensor Solutions</p>
+        </div>
+    </footer>
+
+    <!-- 📜 External JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
